@@ -2,14 +2,16 @@
 
 All the frameworks have been listed, those can be changed according the convenience.
 - [x] Start the server
+- [ ] [JSON Schema](https://docs.rs/jsonschema/latest/jsonschema/)
 - [x] Conncet to database Test
-    - [x] MongoDB/Mongoose
-    - [ ] PostgreSQL: Avien / NeonDB
+    - [ ] [SurrealDB](https://surrealdb.com/docs/sdk/rust)
+    - [ ] [PoloDB](https://www.polodb.org/)
+    - [x] MongoDB/Mongoose => fallback to surrealdb
     - [ ] DynamoDB
     - [ ] Cassandra
-    - [ ] Prisma
+    - [ ] [Prisma](https://prisma.brendonovich.dev/)
 - [ ] Middleware
-- [ ] Zod like schema validator - actix_web_validator / validator
+- [ ] [actix_web_validator](https://docs.rs/actix-web-validator/latest/actix_web_validator/) / [validator](https://github.com/Keats/validator)
 - [ ] Authentication: Cookies, jwt like
     - [ ] [Cookies are in built](https://docs.rs/actix-web/latest/actix_web/)
 - [ ] CI/CD Pipeline
@@ -22,7 +24,7 @@ All the frameworks have been listed, those can be changed according the convenie
     - [ ] Autoscaling group
     - [ ] DDOS, Rate Limit
     - [ ] Load Balancer / nginx (write your own / aws)
-- [ ] GRPC
+- [ ] [TONIC - A Rust GRPC](https://github.com/hyperium/tonic)
 - [ ] Test Integration
 - [ ] Kafka
 - [ ] Redis
@@ -31,5 +33,5 @@ All the frameworks have been listed, those can be changed according the convenie
 - [ ] Serverless fns
 - [ ] Cert management
 - [ ] Monitoring tools like:
-    - [ ] Promethus
+    - [ ] Prometheus
     - [ ] Grafana
