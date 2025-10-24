@@ -11,12 +11,12 @@ All the frameworks have been listed, those can be changed according the convenie
 - [ ] Middleware
 - [ ] Zod like schema validator - actix_web_validator / validator
 - [ ] Authentication: Cookies, jwt like
-    - [ ] (Cookies are in built)[https://docs.rs/actix-web/latest/actix_web/]
+    - [ ] [Cookies are in built](https://docs.rs/actix-web/latest/actix_web/)
 - [ ] CI/CD Pipeline
     - [x] CI 
-         - (build.yaml / cargo book)[https://doc.rust-lang.org/cargo/guide/continuous-integration.html]
-         - (build.yaml / github)[https://github.com/actions/starter-workflows/blob/main/ci/rust.yml]
-    - [ ] Deploy into aws => (aws.yaml)[https://github.com/actions/starter-workflows/blob/main/deployments/aws.yml]
+         - [build.yaml / cargo book](https://doc.rust-lang.org/cargo/guide/continuous-integration.html)
+         - [build.yaml / github](https://github.com/actions/starter-workflows/blob/main/ci/rust.yml)
+    - [ ] Deploy into aws => [aws.yaml](https://github.com/actions/starter-workflows/blob/main/deployments/aws.yml)
 - [ ] Docker Test / Actionable Docker / Docker Swarm
 - [ ] AWS Test Deploy => Need to save the aws key and aws secret keys 
     - [ ] Autoscaling group
