@@ -2,10 +2,12 @@ mod model;
 #[cfg(test)]
 mod test;
 
+use actix_files::{NamedFile};
 use dotenv::dotenv;
 use model::User;
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 use mongodb::{Client, Collection, IndexModel, bson::doc, options::IndexOptions};
+
 
 const DB_NAME: &str = "myApp";
 const COLL_NAME: &str = "users";
@@ -52,7 +54,8 @@ async fn create_username_index(client: &Client) {
 
 #[get("/")]
 async fn test_func() -> impl Responder {
-    HttpResponse::Ok().body("testing server")
+    // HttpResponse::Ok().body("testing server")
+    NamedFile::open_async("./static/index.html").await
 }
 
 async fn manual_hello() -> impl Responder {
@@ -74,7 +77,7 @@ async fn main() -> std::io::Result<()> {
 
     HttpServer::new(move || {
         App::new()
-            .app_data(web::Data::new(client.clone()))
+            // .app_data(web::Data::new(client.clone()))
             .service(add_user)
             .service(get_user)
             .service(test_func)
