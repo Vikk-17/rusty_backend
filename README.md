@@ -6,7 +6,10 @@ All the frameworks have been listed, those can be changed according the convenie
 - [x] Conncet to database Test
     - [ ] [SurrealDB](https://surrealdb.com/docs/sdk/rust)
     - [ ] [PoloDB](https://www.polodb.org/)
+    - [ ] [SQLx](https://github.com/launchbadge/sqlx)
     - [x] MongoDB/Mongoose => fallback to surrealdb
+        - [Cargo book](https://docs.rs/mongodb/3.3.0/mongodb/#web-framework-examples)
+        - [GitHub Example](https://github.com/actix/examples/tree/master/databases/mongodb)
     - [ ] DynamoDB
     - [ ] Cassandra
     - [ ] [Prisma](https://prisma.brendonovich.dev/)
