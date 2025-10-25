@@ -19,8 +19,9 @@ All the frameworks have been listed, those can be changed according the convenie
     - [ ] [Cookies are in built](https://docs.rs/actix-web/latest/actix_web/)
 - [ ] CI/CD Pipeline
     - [x] CI 
-         - [build.yaml / cargo book](https://doc.rust-lang.org/cargo/guide/continuous-integration.html)
-         - [build.yaml / github](https://github.com/actions/starter-workflows/blob/main/ci/rust.yml)
+        - [build.yaml / cargo book](https://doc.rust-lang.org/cargo/guide/continuous-integration.html)
+        - [build.yaml / github](https://github.com/actions/starter-workflows/blob/main/ci/rust.yml)
+        - [autdit.yaml / github gist](https://gist.github.com/LukeMathWalker/5ae1107432ce283310c3e601fac915f3)
     - [ ] Deploy into aws => [aws.yaml](https://github.com/actions/starter-workflows/blob/main/deployments/aws.yml)
 - [ ] Docker Test / Actionable Docker / Docker Swarm
 - [ ] AWS Test Deploy => Need to save the aws key and aws secret keys 

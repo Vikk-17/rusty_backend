@@ -1,9 +1,9 @@
+use super::*;
 use actix_web::{
     test::{TestRequest, call_and_read_body, call_and_read_body_json, init_service},
     web::Bytes,
 };
 use dotenv::dotenv;
-use super::*;
 
 #[actix_web::test]
 #[ignore = "requires MongoDB instance running"]

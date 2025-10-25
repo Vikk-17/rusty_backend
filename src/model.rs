@@ -1,5 +1,4 @@
-use serde::{Serialize, Deserialize};
-
+use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct User {
@@ -12,5 +11,5 @@ pub struct User {
 #[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Account {
     pub userid: String,
-    pub balance: i32, 
+    pub balance: i32,
 }
