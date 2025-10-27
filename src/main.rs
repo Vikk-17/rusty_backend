@@ -58,6 +58,11 @@ async fn manual_hello() -> impl Responder {
     HttpResponse::Ok().body("Checking manual function")
 }
 
+async fn test() -> impl Responder {
+    "test"
+}
+
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     dotenv().ok();
@@ -74,6 +79,7 @@ async fn main() -> std::io::Result<()> {
             .service(get_user)
             .service(test_func)
             .route("/hey", web::get().to(manual_hello))
+            .route("/test", web::get().to(test))
     })
     .bind(("127.0.0.1", 8000))?
     .run()
