@@ -1,7 +1,8 @@
 mod model;
 #[cfg(test)]
 mod test;
-
+mod load_dotenv;
+use load_dotenv::load_file_connect_db; 
 use actix_files::NamedFile;
 use actix_web::{App, HttpResponse, HttpServer, Responder, get, post, web};
 use dotenv::dotenv;
@@ -62,12 +63,12 @@ async fn test() -> impl Responder {
     "test"
 }
 
-
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    // load dotenv
     dotenv().ok();
 
-    let uri = std::env::var("MONGODB_URI").unwrap_or_else(|_| "mongodb::/localhost/27017".into());
+    let uri = std::env::var("MONGODB_URI").unwrap_or_else(|_| "mongodb://localhost/27017".into());
     let client = Client::with_uri_str(uri).await.expect("Failed to connect");
 
     create_username_index(&client).await;
