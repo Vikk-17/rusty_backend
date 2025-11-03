@@ -75,7 +75,13 @@ jobs:
                   username: ubuntu
                   key: ${{ secrets.EC2_SSH_KEY }}
                   port: 22
-                  script: "./scripts/deploy.sh"
+                  script: |
+                      docker pull hipster0x/rustbackend:latest
+                      if [ $(docker ps -q -f name=rust-backend) ]; then
+                          docker stop rust-backend
+                          docker rm rust-backend
+                      fi
+                      docker run -d --name rust-backend -p 8080:8080 hipster0x/rustbackend:latest
 
 
     # ecs-deploy:
