@@ -10,7 +10,6 @@
 use actix_web::{HttpResponse, App, HttpServer, Responder, get};
 use serde_json::json;
 
-
 #[get("/")]
 async fn root_page() -> impl Responder {
     HttpResponse::Ok().json(json!({
@@ -18,7 +17,6 @@ async fn root_page() -> impl Responder {
         "Status": "Ok",
     }))
 }
-
 
 #[get("/health")]
 async fn hello() -> impl Responder {
@@ -39,7 +37,7 @@ async fn main() -> std::io::Result<()> {
             .service(root_page)
             .service(hello)
     })
-    .bind(("127.0.0.1", 8080))?
+    .bind(("0.0.0.0", 8080))?
     .run()
     .await
 }
