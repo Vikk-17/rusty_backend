@@ -77,9 +77,9 @@ jobs:
                   port: 22
                   script: |
                       docker pull hipster0x/rustbackend:latest
-                      if [ $(docker ps -q -f name=rust-backend) ]; then
-                          docker stop rust-backend
-                          docker rm rust-backend
+                      if [ $(docker ps -q -f name=rust-backend-test) ]; then
+                          docker stop rust-backend-test
+                          docker rm rust-backend-test
                       fi
                       docker run -d --name rust-backend -p 8080:8080 hipster0x/rustbackend:latest
 
