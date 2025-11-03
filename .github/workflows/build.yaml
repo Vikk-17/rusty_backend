@@ -64,6 +64,19 @@ jobs:
                   provenance: true
                   sbom: true
 
+    aws-deploy:
+        name: Deploy to EC2
+        runs-on: ubuntu-latest
+        steps:
+            - name: SSH Connection
+              uses: appleboy/ssh-action@v1
+              with: 
+                  host: ${{ secrets.EC2_HOST }}
+                  username: Souvik_Chakraborty
+                  key: ${{ secrets.EC2_SSH_KEY }}
+                  port: 22
+                  script: "../../scripts/deploy.sh"
+
 
     # ecs-deploy:
     #   needs: docker-build-push
