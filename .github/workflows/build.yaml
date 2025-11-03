@@ -4,9 +4,9 @@ on:
     push:
         branches:
             - e2e
-    pull_request:
-        branches:
-            - e2e
+    # pull_request:
+    #     branches:
+    #         - e2e
 
 env: 
     CARGO_TERM_COLOR: always
@@ -42,7 +42,7 @@ jobs:
               id: meta 
               uses: docker/metadata-action@v5
               with:
-                  images: ${{ vars.DOCKER_USERNAME }}/rust-backend
+                  images: ${{ vars.DOCKER_USERNAME }}/rustbackend
 
             - name: Log in to Docker Hub
               uses: docker/login-action@v3
