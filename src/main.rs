@@ -26,6 +26,13 @@ async fn hello() -> impl Responder {
     }))
 }
 
+#[get("/aws")]
+async fn aws() -> impl Responder {
+    HttpResponse::Ok().json(json!({
+        "message": "Running on amazon ec2 service",
+        "Status": "Ok",
+    }))
+}
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -36,6 +43,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .service(root_page)
             .service(hello)
+            .service(aws)
     })
     .bind(("0.0.0.0", 8080))?
     .run()

@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 # Copy manifests first to cache dependencies
 COPY Cargo.toml Cargo.lock ./
 
-# RUN cargo fetch
+RUN cargo fetch
 
 # Copy the source 
 COPY . .
