@@ -64,11 +64,7 @@ jobs:
                   provenance: true
                   sbom: true
 
-    aws-deploy:
-        name: Deploy to EC2
-        runs-on: ubuntu-latest
-        steps:
-            - name: SSH Connection
+            - name: Deploy to EC2
               uses: appleboy/ssh-action@v0.1.7
               with: 
                   host: ${{ secrets.EC2_HOST }}
@@ -83,6 +79,25 @@ jobs:
                       fi
                       docker run -d --name rust-backend -p 8080:8080 hipster0x/rustbackend:latest
 
+    # aws-deploy:
+    #     name: Deploy to EC2
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - name: SSH Connection
+    #           uses: appleboy/ssh-action@v0.1.7
+    #           with: 
+    #               host: ${{ secrets.EC2_HOST }}
+    #               username: ubuntu
+    #               key: ${{ secrets.EC2_SSH_KEY }}
+    #               port: 22
+    #               script: |
+    #                   docker pull hipster0x/rustbackend:latest
+    #                   if [ $(docker ps -q -f name=rust-backend-test) ]; then
+    #                       docker stop rust-backend-test
+    #                       docker rm rust-backend-test
+    #                   fi
+    #                   docker run -d --name rust-backend -p 8080:8080 hipster0x/rustbackend:latest
+    #
 
     # ecs-deploy:
     #   needs: docker-build-push
