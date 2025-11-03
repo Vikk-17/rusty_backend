@@ -69,13 +69,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: SSH Connection
-              uses: appleboy/ssh-action@v1
+              uses: appleboy/ssh-action@v0.1.7
               with: 
                   host: ${{ secrets.EC2_HOST }}
-                  username: Souvik_Chakraborty
+                  username: ubuntu
                   key: ${{ secrets.EC2_SSH_KEY }}
                   port: 22
-                  script: "../../scripts/deploy.sh"
+                  script: "./scripts/deploy.sh"
 
 
     # ecs-deploy:
